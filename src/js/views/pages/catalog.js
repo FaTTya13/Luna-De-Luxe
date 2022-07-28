@@ -1,7 +1,9 @@
 import Component from '../component.js';
 import Modal from '../partials/Modal.js';
 import Basket from '../partials/basket.js';
+import Carousel from '../partials/carousel.js';
 
+const carousel = new Carousel();
 const basket = new Basket();
 const modal = new Modal();
 
@@ -27,6 +29,24 @@ class Catalog extends Component {
           </div>
         </div>
         <div class="catalog_items">
+          <div class="modal advance" id="modal">
+            <span class="modal-title">Оформить заявку</span>
+            <button data-close-button class="close-button">×</button>
+            <div class="modal-purchase-item">
+            </div>
+            <div class="modalPurchaseItem_contact-info">
+              <input type="text" placeholder="Имя">
+              <input type="tel" placeholder="+380_ _ _ _ _ _ _ _ _">
+            </div>
+            <button data-modal-target="#modal-tnx" class="modalPurchaseItem_button">Заказать</button>
+          </div>
+          <div class="proposition_form modal" id="modal-tnx">
+            <div class="modal-header">
+              <p>Спасибо за заявку!</p>
+              <button data-close-button class="close-button">&times;</button>
+            </div>
+            <p>Наши менеджеры совсем скоро позвонят Вам</p>
+          </div>
           <div class="catalog_item">
             <div class="catalog_item-header">
               <span class="item-header_title">Земфира</span>
@@ -72,7 +92,7 @@ class Catalog extends Component {
             </div>
             <div class="item_buttons">
               <button class="item-buttons_button shop-button">Добавить в корзину</button>
-              <button class="item-buttons_button">Купить в 1 клик</button>
+              <button class="item-buttons_button shop-button-now">Купить в 1 клик</button>
             </div>
           </div>
           <div class="catalog_item">
@@ -432,36 +452,9 @@ class Catalog extends Component {
 
   afterRender() {
     modal.init();
+    carousel.init();
     basket.initBasket();
-    this.carousel();
-  }
-
-  carousel() {
-    const users = document.getElementsByClassName('catalog_item');
-    const userTabs = document.getElementsByClassName('user-tabs')[0];
-
-    userTabs.children[0].classList.add('activeTab');
-    userTabs.addEventListener('click', showUser);
-
-    users[0].classList.add('activeUser');
-
-    function showUser(e) {
-      let target = e.target;
-
-      if (target.classList.contains('user-tab')) {
-        for (let i = 0; i < users.length; i++) {
-          userTabs.children[i].classList.remove('activeTab');
-          users[i].classList.remove('activeTab');
-
-          if (userTabs.children[i] == target) {
-            users[i].classList.add('activeUser');
-          } else {
-            users[i].classList.remove('activeUser');
-          }
-        }
-        target.classList.add('activeTab');
-      }
-    }
+    basket.initOneClickBuy();
   }
 }
 

@@ -1,11 +1,14 @@
 class Basket {
+
+  checklocal() {
+    if (window.localStorage.getItem('basketItems') === null) {
+      window.localStorage.setItem('basketItems', JSON.stringify([]));
+    }
+  }
+
   initBasket() {
       const addItemToBasketBtns = document.getElementsByClassName('shop-button');
       const basketBuyBtn = document.getElementsByClassName('basket_button')[0];
-
-      if (!localStorage.getItem('basketItems')) {
-        localStorage.setItem('basketItems', JSON.stringify([]));
-      }
 
       basketBuyBtn.addEventListener('click', buyBtnClicked);
 
@@ -44,8 +47,16 @@ class Basket {
 
       function refreshBasket() {
           const catalogItems = document.getElementsByClassName('basket_items')[0];
+          const addItemToBasketBtns = document.getElementsByClassName('shop-button');
       
           catalogItems.innerHTML = ``;
+    
+          for (let i = 0; i < addItemToBasketBtns.length; i++) {
+            let addButton = addItemToBasketBtns[i];
+            addButton.disabled = false;
+            addButton.innerHTML = 'Добавить в корзину'
+          }
+
       
           addItemToBasket()
       }
@@ -93,9 +104,7 @@ class Basket {
               </div>
               <div class='item_price'>
                 <span class='shop-item-price'> ${basketItemsContent[i].price}</span>
-                <span>₴ 835</span>
               </div>
-            <!--  <button class='btn-delete'><span>&times;</span>Удалить</button> -->
               <div>
             `;
 
@@ -172,6 +181,66 @@ class Basket {
       } else {
         alert('Корзина пуста! Добавьте товар в корзину')
         refreshBasket();
+      }
+    }
+  }
+
+  initOneClickBuy() {
+    const buyNowBtns = document.getElementsByClassName('shop-button-now')
+
+    for (let i = 0; i < buyNowBtns.length; i++) {
+      let addButton = buyNowBtns[i];
+      addButton.addEventListener('click', oneClickBuy);
+    }
+
+    function oneClickBuy(event) {
+      let addButton = event.target;
+      const shopItem = addButton.parentElement.parentElement;
+      const title = shopItem.getElementsByClassName('item-header_title')[0].innerHTML;
+      const price = shopItem.getElementsByClassName('shop-item-price')[0].innerHTML;
+      const imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src;
+      
+      const catalogItems = document.getElementsByClassName('advance')[0];
+      catalogItems.classList.add('active');
+
+      const itemForPurchase = document.getElementsByClassName('modal-purchase-item')[0];
+
+      let basketItemContent = `
+        <img class='shop-item-image' src='${imageSrc}' alt='bundle-photo'>
+        <div class='item_constructor'>
+          <span class='item-header_title'>${title}</span>
+          <div class='bed-parametrs'>
+            <span>Выбрать размер</span>
+            <select>
+              <option selected disabled>Не выбрано</option>
+              <option>Полуторный</option>
+              <option>Двуспальный</option>
+              <option>Евростандарт</option>
+              <option>Семейный</option>
+            </select>
+          </div>
+          <div class='pillowcase-parametrs'>
+            <span>Выбрать размер наволочки</span>
+            <select>
+              <option selected disabled>Не выбрано</option>
+              <option>70X70 см</option>
+              <option>50X70 см</option>
+            </select>
+          </div>
+        </div>
+        <div class='item_price'>
+          <span class='shop-item-price'> ${price}</span>
+        </div>
+      `;
+
+      itemForPurchase.innerHTML = basketItemContent;
+
+      const btn = document.getElementsByClassName('modalPurchaseItem_button')[0]
+      btn.addEventListener('click', func)
+
+      function func(event) {
+        event.target.parentElement.classList.remove('active');
+        document.getElementById('modal-tnx').classList.add('active')
       }
     }
   }

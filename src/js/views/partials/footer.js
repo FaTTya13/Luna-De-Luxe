@@ -32,7 +32,7 @@ class Footer extends Component {
               <p>+ 38 (093) 170-75-96</p> 
             </div>
           </div>
-         <!-- <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae179b9b85a2550b2c8f2796787278bb299da7321348f8589203a1f55518a7e4b&amp;source=constructor" width="100%" height="549" frameborder="0"></iframe> -->
+        <iframe class="map" src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae179b9b85a2550b2c8f2796787278bb299da7321348f8589203a1f55518a7e4b&amp;source=constructor" width="100%" height="549" frameborder="0"></iframe>
         </div>
         <div class="footer_form">
             <p>Оформите заказ через менеджера</p>
@@ -47,7 +47,19 @@ class Footer extends Component {
     }
 
     afterRender() {
+      this.initMap();
     };
+
+    initMap() {
+      const mapTrigger = document.getElementsByClassName('footer-contacts_map')[0]
+      mapTrigger.addEventListener('click', openMap)
+
+      function openMap() {
+        const map = document.getElementsByClassName('map')[0]
+
+        map.classList.toggle('active');
+      }
+    }
 }
 
 export default Footer;

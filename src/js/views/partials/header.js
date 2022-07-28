@@ -73,7 +73,7 @@ class Header extends Component {
         <div class="main-content">
           <h1>Постельное белье<span> премиум класса</span></h1>
           <p>Уже более 10 лет наши покупатели довольны качеством нашей продукции</p>
-          <button class="toCatalog">Перейти в каталог</button>
+          <button class="toCatalogBtn">Перейти в каталог</button>
         </div>
         <div class="goods-description-block">
           <div class="goods-description-block_items-wrapper">
@@ -123,13 +123,13 @@ class Header extends Component {
   }
 
   afterRender() {
+    basket.checklocal();
     modal.init();
-    // basket.initBasket();
     this.toCatalog();
   }
 
   toCatalog() {
-    const button = document.querySelector('.toCatalog');
+    const button = document.querySelector('.toCatalogBtn');
     button.addEventListener('click', () => {
       location.href = '#/catalog';
       if ((location.href = '#/catalog')) {

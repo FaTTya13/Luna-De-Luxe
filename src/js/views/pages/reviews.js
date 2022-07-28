@@ -1,7 +1,9 @@
 import Component from '../component.js';
 import Modal from '../partials/Modal.js';
+import Basket from '../partials/basket.js';
 
 const modal = new Modal();
+const basket = new Basket();
 
 class Reviews extends Component {
   render() {
@@ -85,6 +87,7 @@ class Reviews extends Component {
 
   afterRender() {
     modal.init();
+    basket.initBasket();
     this.countDownTimer();
     this.carousel();
   }

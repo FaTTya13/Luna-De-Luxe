@@ -127,6 +127,9 @@ header {
   color: #fff;
   cursor: pointer;
 }
+.header-content_basket:hover {
+  transform: scale(1.05);
+}
 .header-content_basket .header-content_basket-img {
   position: relative;
   width: 60px;
@@ -180,7 +183,7 @@ header {
   width: 365px;
   margin-bottom: 55px;
 }
-.main-content button {
+.main-content .toCatalogBtn {
   color: #fff;
   width: 253px;
   height: 60px;
@@ -189,6 +192,9 @@ header {
   border-radius: 80px;
   background: linear-gradient(355.74deg, #fcb25f 34.5%, #fde7ce 111.35%), linear-gradient(347.59deg, #fcb25f 21.12%, #fde7ce 97.18%);
   cursor: pointer;
+}
+.main-content .toCatalogBtn:hover {
+  transform: scale(1.1);
 }
 .goods-description-block {
   display: flex;
@@ -246,6 +252,9 @@ header {
   font-size: 22px;
   line-height: 45px;
   font-weight: 700;
+}
+.goods-description-block .fb-link:hover {
+  transform: scale(1.2);
 }
 .about-us {
   width: 1920px;
@@ -341,7 +350,7 @@ header {
 .popular-bundles::after {
   position: absolute;
   left: 1320px;
-  top: 920px;
+  top: 880px;
   content: url("../../src/assets/images/bg_flying-pillow.png");
 }
 .popular-bundles .popular-bundles_header {
@@ -532,6 +541,9 @@ header {
   background: linear-gradient(355.74deg, #fcb25f 34.5%, #fde7ce 111.35%), linear-gradient(347.59deg, #fcb25f 21.12%, #fde7ce 97.18%);
   cursor: pointer;
 }
+.popular-bundles .catalog_items .catalog_item .item_buttons .item-buttons_button:hover {
+  transform: scale(1.1);
+}
 .popular-bundles .catalog_items .catalog_item .item_buttons .item-buttons_button:first-of-type {
   color: #fcb25f;
   outline: none;
@@ -646,6 +658,9 @@ header {
   border-radius: 80px;
   background: linear-gradient(355.74deg, #fcb25f 34.5%, #fde7ce 111.35%), linear-gradient(347.59deg, #fcb25f 21.12%, #fde7ce 97.18%);
   cursor: pointer;
+}
+.about-fabrics .about-fabrics_item-wrapper .about-fabrics_items-wrapper_material button:hover {
+  transform: scale(1.1);
 }
 .about-fabrics .about-fabrics_item-wrapper .about-fabrics_items-wrapper_parameters ul {
   width: 270px;
@@ -895,6 +910,9 @@ header {
   background: linear-gradient(355.74deg, #fcb25f 34.5%, #fde7ce 111.35%), linear-gradient(347.59deg, #fcb25f 21.12%, #fde7ce 97.18%);
   cursor: pointer;
 }
+.catalog .catalog_items .catalog_item .item_buttons .item-buttons_button:hover {
+  transform: scale(1.1);
+}
 .catalog .catalog_items .catalog_item .item_buttons .item-buttons_button:first-of-type {
   color: #fcb25f;
   outline: none;
@@ -1023,6 +1041,9 @@ header {
   border-radius: 80px;
   background: linear-gradient(355.74deg, #fcb25f 34.5%, #fde7ce 111.35%), linear-gradient(347.59deg, #fcb25f 21.12%, #fde7ce 97.18%);
   cursor: pointer;
+}
+.callback .callback_form .callback_form_inputs button:hover {
+  transform: scale(1.1);
 }
 .our-benefits {
   width: 1920px;
@@ -1275,6 +1296,9 @@ header {
   background: linear-gradient(355.74deg, #fcb25f 34.5%, #fde7ce 111.35%), linear-gradient(347.59deg, #fcb25f 21.12%, #fde7ce 97.18%);
   cursor: pointer;
 }
+.proposition .proposition_form .proposition_form_inputs button:hover {
+  transform: scale(1.1);
+}
 .reviews {
   min-height: 1100px;
   border-bottom: 1px solid #fff;
@@ -1473,6 +1497,9 @@ header {
   font-weight: 700;
   z-index: 1;
 }
+.footer .footer-header .footer_fb:hover {
+  transform: scale(1.1);
+}
 .footer .footer-contacts {
   width: 900px;
   min-height: 150px;
@@ -1496,6 +1523,7 @@ header {
   margin-left: 50px;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 .footer .footer-contacts .footer-contacts-wrapper .footer-contacts_map::before {
   position: absolute;
@@ -1565,6 +1593,12 @@ header {
   margin-top: 20px;
   color: #fff;
 }
+.footer .footer-contacts .map {
+  display: none;
+}
+.footer .footer-contacts .map.active {
+  display: block;
+}
 .footer .footer_form {
   width: 820px;
   min-height: 280px;
@@ -1603,25 +1637,38 @@ header {
   background: transparent;
   cursor: pointer;
 }
+.footer .footer_form .footer_form_inputs button:hover {
+  transform: scale(1.1);
+}
 .modal {
   position: fixed;
   top: 50%;
   left: 50%;
+  display: flex;
+  flex-direction: column;
+  width: 1190px;
+  min-height: 280px;
   transform: translate(-50%, -50%) scale(0);
   transition: 200ms ease-in-out;
   border: 1px solid black;
-  z-index: 1;
-  width: 1190px;
-  min-height: 280px;
   background-color: rgba(255, 255, 255, 0.9);
   background-image: url("../../src/assets/images/callback-form-bg.png");
   background-position: center;
   background-repeat: no-repeat;
   box-shadow: 0px 0px 18px rgba(146, 146, 146, 0.21);
   border-radius: 5px;
+  z-index: 2;
 }
 .modal p {
   text-align: center;
+}
+.modal .modal-title {
+  margin-top: 30px;
+  font-size: 30px;
+  line-height: 33px;
+  text-align: center;
+  letter-spacing: 0.005em;
+  color: #FFFFFF;
 }
 .modal.active {
   transform: translate(-50%, -50%) scale(1);
@@ -1636,13 +1683,10 @@ header {
   font-size: 30px;
   margin: 0 auto;
 }
-.modal-header button {
-  color: #fcb25f;
-  cursor: pointer;
-}
 .modal-header .close-button {
   border: none;
   outline: none;
+  color: #fcb25f;
   background: none;
   font-size: 25px;
   width: 30px;
@@ -1650,6 +1694,9 @@ header {
   background: rgba(217, 124, 125, 0.2);
   border-radius: 50%;
   cursor: pointer;
+}
+.modal-header .close-button:hover {
+  transform: scale(1.1);
 }
 .modal_form_inputs {
   display: flex;
@@ -1677,6 +1724,9 @@ header {
   border-radius: 80px;
   background: linear-gradient(355.74deg, #fcb25f 34.5%, #fde7ce 111.35%), linear-gradient(347.59deg, #fcb25f 21.12%, #fde7ce 97.18%);
   cursor: pointer;
+}
+.modal_form_inputs button:hover {
+  transform: scale(1.1);
 }
 #overlay {
   position: fixed;
@@ -1710,14 +1760,19 @@ header {
 .basket .close-button {
   width: 30px;
   height: 30px;
-  margin: 50px 80px 20px 0;
+  margin: 50px 80px 0 0;
   align-self: flex-end;
   color: #fcb25f;
   border: none;
   outline: none;
   font-size: 30px;
-  background-color: #292D34;
+  background: rgba(217, 124, 125, 0.2);
+  line-height: 30px;
+  border-radius: 50%;
   cursor: pointer;
+}
+.basket .close-button:hover {
+  transform: scale(1.2);
 }
 .basket h3,
 .basket p {
@@ -1836,6 +1891,7 @@ header {
   cursor: pointer;
 }
 .basket .basket_items .basket-item .btn-delete:hover {
+  transform: scale(1.1);
   border-color: #f00;
 }
 .basket .basket_contact-info {
@@ -1867,6 +1923,9 @@ header {
   background: linear-gradient(355.74deg, #fcb25f 34.5%, #fde7ce 111.35%), linear-gradient(347.59deg, #fcb25f 21.12%, #fde7ce 97.18%);
   cursor: pointer;
 }
+.basket .basket_button:hover {
+  transform: scale(1.1);
+}
 .basket .basket_total {
   margin: 0 50px 20px 0;
   text-align: end;
@@ -1894,4 +1953,126 @@ header {
   border: 1px solid #fff;
   border-radius: 80px;
   text-transform: uppercase;
+}
+.modal-purchase-item {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+  width: 890px;
+  margin: 0 auto;
+  min-height: 180px;
+  padding: 50px 0;
+  border: 1px solid #fff;
+  border-radius: 15px;
+}
+.modal-purchase-item .item-header_title {
+  font-family: "Georgia", 'Times New Roman', Times, serif;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+}
+.modal-purchase-item .shop-item-image {
+  width: 190px;
+  height: 160px;
+  align-self: center;
+}
+.modal-purchase-item .item_constructor {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 380px;
+  min-height: 160px;
+}
+.modal-purchase-item .item_constructor .bed-parametrs,
+.modal-purchase-item .item_constructor .pillowcase-parametrs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal-purchase-item .item_constructor .bed-parametrs span,
+.modal-purchase-item .item_constructor .pillowcase-parametrs span {
+  width: 120px;
+}
+.modal-purchase-item .item_constructor .bed-parametrs select,
+.modal-purchase-item .item_constructor .pillowcase-parametrs select {
+  color: #fff;
+  width: 215px;
+  min-height: 45px;
+  background: #2F343B;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 80px;
+}
+.modal-purchase-item .item_price {
+  align-self: center;
+}
+.modal-purchase-item .item_price span {
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  text-decoration-line: line-through;
+  color: #FFFFFF;
+  opacity: 0.5;
+}
+.modal-purchase-item .item_price .shop-item-price {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0 15px 0 0;
+  opacity: 1;
+  color: #fff;
+  text-decoration: none;
+}
+.advance {
+  min-height: 500px;
+  padding: 60px 0;
+  background-size: cover;
+}
+.advance .close-button {
+  margin-right: 50px;
+  align-self: flex-end;
+  color: #fcb25f;
+  border: none;
+  outline: none;
+  font-size: 30px;
+  background: rgba(217, 124, 125, 0.2);
+  line-height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.advance .close-button:hover {
+  transform: scale(1.2);
+}
+.advance .modalPurchaseItem_contact-info {
+  width: 850px;
+  min-height: 100px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+.advance .modalPurchaseItem_contact-info input {
+  color: #fff;
+  width: 350px;
+  height: 60px;
+  margin: 15px 0;
+  padding: 0 20px;
+  box-shadow: 0 0 0 1px #fcb25f;
+  border-radius: 80px;
+  background: linear-gradient(90.15deg, #292D34 46.26%, rgba(41, 45, 52, 0) 112.6%);
+}
+.advance .modalPurchaseItem_button {
+  display: block;
+  margin: 0 auto;
+  color: #fff;
+  width: 253px;
+  min-height: 60px;
+  outline: 1px solid rgba(252, 178, 95, 0.2);
+  outline-offset: 10px;
+  border: none;
+  border-radius: 80px;
+  background: linear-gradient(355.74deg, #fcb25f 34.5%, #fde7ce 111.35%), linear-gradient(347.59deg, #fcb25f 21.12%, #fde7ce 97.18%);
+  align-self: center;
+  cursor: pointer;
+}
+.advance .modalPurchaseItem_button:hover {
+  transform: scale(1.1);
 }

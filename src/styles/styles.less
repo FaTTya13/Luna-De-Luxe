@@ -147,6 +147,10 @@ header {
     color: #fff;
     cursor: pointer;
 
+    &:hover {
+        transform: scale(1.05);
+    }
+
     .header-content_basket-img {
         position: relative;
         width: 60px;
@@ -201,7 +205,7 @@ header {
         width: 365px;
         margin-bottom: 55px;
     }
-    button {
+    .toCatalogBtn {
         color: #fff;
         width: 253px;
         height: 60px;
@@ -211,6 +215,10 @@ header {
         background: linear-gradient(355.74deg, #fcb25f 34.5%, #fde7ce 111.35%),
                     linear-gradient(347.59deg, #fcb25f 21.12%, #fde7ce 97.18%);
         cursor: pointer;
+
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 }
 
@@ -275,6 +283,10 @@ header {
         font-size: 22px;
         line-height: 45px;
         font-weight: 700;
+
+        &:hover {
+            transform: scale(1.2);
+        }
     }
 }
 
@@ -375,7 +387,7 @@ header {
     &::after {
         position:absolute;
         left: 1320px;
-        top: 920px;
+        top: 880px;
         content: url("@{images}bg_flying-pillow.png");
     }
 
@@ -571,6 +583,11 @@ header {
                     background: linear-gradient(355.74deg, #fcb25f 34.5%, #fde7ce 111.35%),
                                 linear-gradient(347.59deg, #fcb25f 21.12%, #fde7ce 97.18%);
                     cursor: pointer;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+
                     &:first-of-type {
                         color: #fcb25f;
                         outline: none;
@@ -693,6 +710,10 @@ header {
                 background: linear-gradient(355.74deg, #fcb25f 34.5%, #fde7ce 111.35%),
                             linear-gradient(347.59deg, #fcb25f 21.12%, #fde7ce 97.18%);
                 cursor: pointer;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
             }
         }
         .about-fabrics_items-wrapper_parameters {
@@ -952,6 +973,11 @@ header {
                     background: linear-gradient(355.74deg, #fcb25f 34.5%, #fde7ce 111.35%),
                                 linear-gradient(347.59deg, #fcb25f 21.12%, #fde7ce 97.18%);
                     cursor: pointer;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+
                     &:first-of-type {
                         color: #fcb25f;
                         outline: none;
@@ -1094,6 +1120,9 @@ header {
             background: linear-gradient(355.74deg, #fcb25f 34.5%, #fde7ce 111.35%),
                         linear-gradient(347.59deg, #fcb25f 21.12%, #fde7ce 97.18%);
             cursor: pointer;
+            &:hover {
+                transform: scale(1.1);
+            }
             }
         }
     }
@@ -1394,6 +1423,10 @@ header {
             background: linear-gradient(355.74deg, #fcb25f 34.5%, #fde7ce 111.35%),
                         linear-gradient(347.59deg, #fcb25f 21.12%, #fde7ce 97.18%);
             cursor: pointer;
+
+            &:hover {
+                transform: scale(1.1);
+            }
             }
         }
     }
@@ -1614,6 +1647,9 @@ header {
             line-height: 45px;
             font-weight: 700;
             z-index: 1;
+            &:hover {
+                transform: scale(1.1);
+            }
             }
     }
     
@@ -1634,13 +1670,14 @@ header {
             margin-top: 30px; 
             display: flex;
             justify-content: space-between;
-        
+            
             .footer-contacts_map {
                 position: relative;
                 width: 210px;
                 margin-left: 50px;
                 display: flex;
                 flex-direction: column;
+                cursor: pointer;
 
                 &::before {
                     position: absolute;
@@ -1719,6 +1756,13 @@ header {
                 }
             }
         }
+        .map {
+            display: none;
+
+            &.active {
+                display: block;
+            }
+        }
     }
     .footer_form {
     width: 820px;
@@ -1759,6 +1803,10 @@ header {
             border-radius: 80px;
             background: transparent;
             cursor: pointer;
+
+            &:hover {
+                transform: scale(1.1);
+            }
             }
         }
     }
@@ -1769,21 +1817,32 @@ header {
     position: fixed;
     top: 50%;
     left: 50%;
+    display: flex;
+    flex-direction: column;
+    width: 1190px;
+    min-height: 280px;
     transform: translate(-50%, -50%) scale(0);
     transition: 200ms ease-in-out;
     border: 1px solid black;
-    z-index: 1;
-    width: 1190px;
-    min-height: 280px;
     background-color: rgba(255, 255, 255, 0.9);
     background-image: url("@{images}callback-form-bg.png");
     background-position: center;
     background-repeat: no-repeat;
     box-shadow: 0px 0px 18px rgba(146, 146, 146, 0.21);
     border-radius: 5px;
+    z-index: 2;
 
     p {
         text-align: center;
+    }
+
+    .modal-title {
+        margin-top: 30px;
+        font-size: 30px;
+        line-height: 33px;
+        text-align: center;
+        letter-spacing: 0.005em;
+        color: #FFFFFF;
     }
 }
   
@@ -1802,22 +1861,22 @@ header {
         margin: 0 auto;
     }
 
-    button {
+    .close-button {
+        border: none;
+        outline: none;
         color: #fcb25f;
+        background: none;
+        font-size: 25px;
+        width: 30px;
+        height: 30px;
+        background: rgba(217, 124, 125, 0.2);
+        border-radius: 50%;
         cursor: pointer;
+
+        &:hover {
+            transform: scale(1.1);
+        }
     }
-}
-    
-.modal-header .close-button {
-    border: none;
-    outline: none;
-    background: none;
-    font-size: 25px;
-    width: 30px;
-    height: 30px;
-    background: rgba(217, 124, 125, 0.2);
-    border-radius: 50%;
-    cursor: pointer;
 }
   
 .modal_form_inputs {
@@ -1846,6 +1905,11 @@ header {
     background: linear-gradient(355.74deg, #fcb25f 34.5%, #fde7ce 111.35%),
     linear-gradient(347.59deg, #fcb25f 21.12%, #fde7ce 97.18%);
     cursor: pointer;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
     }
 }
   
@@ -1883,14 +1947,20 @@ header {
     .close-button {
         width: 30px;
         height: 30px;
-        margin: 50px 80px 20px 0;
+        margin: 50px 80px 0 0;
         align-self: flex-end;
         color: #fcb25f;
         border: none;
         outline: none;
         font-size: 30px;
-        background-color: #292D34;
+        background: rgba(217, 124, 125, 0.2);
+        line-height: 30px;
+        border-radius: 50%;
         cursor: pointer;
+
+        &:hover {
+            transform: scale(1.2);
+        }
     }
 
     h3,
@@ -2020,6 +2090,7 @@ header {
                 cursor: pointer;
 
                 &:hover {
+                    transform: scale(1.1);
                     border-color: #f00;
                 }
             }
@@ -2057,6 +2128,11 @@ header {
     background: linear-gradient(355.74deg, #fcb25f 34.5%, #fde7ce 111.35%),
                 linear-gradient(347.59deg, #fcb25f 21.12%, #fde7ce 97.18%);
     cursor: pointer;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
     }
 
     .basket_total {
@@ -2090,4 +2166,136 @@ header {
     border: 1px solid #fff;
     border-radius: 80px;
     text-transform: uppercase;
+}
+
+.modal-purchase-item {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+    width: 890px;
+    margin: 0 auto;
+    min-height: 180px;
+    padding: 50px 0;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    .item-header_title {
+        font-family: "Georgia", 'Times New Roman', Times, serif;
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #fff;   
+    }
+    .shop-item-image {
+        width: 190px;
+        height: 160px;
+        align-self: center;
+    }
+    .item_constructor {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 380px;
+        min-height: 160px;
+        .bed-parametrs,
+        .pillowcase-parametrs {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            span {
+                width: 120px;
+            }
+            select {
+                color: #fff;
+                width: 215px;
+                min-height: 45px;
+                background: #2F343B;
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                border-radius: 80px;
+            }
+        }
+    }
+    .item_price {
+        align-self: center;
+        span {
+            font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+            text-decoration-line: line-through;
+            
+            color: #FFFFFF;
+            
+            opacity: 0.5;
+        }
+        .shop-item-price {
+            font-size: 40px;
+            font-weight: 700;
+            margin: 0 15px 0 0;  
+            opacity: 1;
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+}
+
+.advance {
+    min-height: 500px;
+    padding: 60px 0;
+    background-size: cover;
+
+    .close-button {
+        margin-right: 50px;
+        align-self: flex-end;
+        color: #fcb25f;
+        border: none;
+        outline: none;
+        font-size: 30px;
+        background: rgba(217, 124, 125, 0.2);
+        line-height: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+
+    .modalPurchaseItem_contact-info {
+        width: 850px;
+        min-height: 100px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+
+        input {
+            color: #fff;
+            width: 350px;
+            height: 60px;
+            margin: 15px 0;
+            padding: 0 20px;
+            box-shadow: 0 0 0 1px #fcb25f;
+            border-radius: 80px;
+            background: linear-gradient(90.15deg, #292D34 46.26%, rgba(41, 45, 52, 0) 112.6%);
+        }
+    }
+
+    .modalPurchaseItem_button {
+    display: block;
+    margin: 0 auto;
+    color: #fff;
+    width: 253px;
+    min-height: 60px;
+    outline: 1px solid rgba(252, 178, 95, 0.2);
+    outline-offset: 10px;
+    border: none;
+    border-radius: 80px;
+    background: linear-gradient(355.74deg, #fcb25f 34.5%, #fde7ce 111.35%),
+                linear-gradient(347.59deg, #fcb25f 21.12%, #fde7ce 97.18%);
+    align-self: center;
+    cursor: pointer;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+    }
 }
