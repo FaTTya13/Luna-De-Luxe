@@ -1,0 +1,12 @@
+/node_modules
+/build
+/coverage
+
+/.vscode
+/.idea
+
+/.env
+
+.DS_Store
+
+*-error.log
